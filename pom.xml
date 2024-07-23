@@ -62,7 +62,6 @@
         <wiremock.version>2.35.1</wiremock.version>
         <mongo-java-driver.version>3.12.11</mongo-java-driver.version>
         <spring-boot.version>2.7.12</spring-boot.version>
-        <bcprov-jdk18on.version>1.78</bcprov-jdk18on.version>
     </properties>
 
     <dependencyManagement>
@@ -116,17 +115,6 @@
                 <groupId>org.openeuler</groupId>
                 <artifactId>bgmprovider</artifactId>
                 <version>${bgmprovider.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.bouncycastle</groupId>
-                        <artifactId>bcprov-jdk15on</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk18on</artifactId>
-                <version>${bcprov-jdk18on.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
