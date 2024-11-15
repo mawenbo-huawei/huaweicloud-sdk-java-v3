@@ -312,6 +312,8 @@ public class Application {
 * [8. 文件上传与下载](#8-文件上传与下载-top)
     * [8.1 上传与下载](#81-上传与下载-top)
     * [8.2 获取进度](#82-获取进度-top)
+* [9. FAQ](#9-faq-top)
+    * [9.1 云联盟场景如何调用](#91-云联盟场景如何调用-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -1482,4 +1484,25 @@ public class ObsDemo {
         getObject(client);
     }
 }
+```
+
+### 9. FAQ [:top:](#用户手册-top)
+
+#### 9.1 云联盟场景如何调用 [:top:](#用户手册-top)
+
+```java
+        // 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
+        String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
+
+        // 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
+        BasicCredentials basicCredentials = new BasicCredentials()
+                .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+                .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
+                .withProjectId("{your projectId string}");
+
+        // 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
+        VpcClient vpcClient = VpcClient.newBuilder()
+                .withCredential(basicCredentials)
+                .withEndpoint(endpoint)
+                .build();
 ```
