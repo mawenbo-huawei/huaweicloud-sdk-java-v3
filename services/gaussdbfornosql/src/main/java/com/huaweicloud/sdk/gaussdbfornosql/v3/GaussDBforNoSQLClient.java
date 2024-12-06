@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchDeleteManualBackupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchDeleteManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
@@ -17,6 +19,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperati
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ClearInstanceSessionsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ClearInstanceSessionsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CompareConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CompareConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CopyConfigurationRequest;
@@ -57,6 +61,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionReques
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteRedisDisabledCommandsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteRedisDisabledCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
@@ -93,6 +99,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceSessionsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceSessionsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByResourceTagsRequest;
@@ -119,6 +127,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisPitrRestoreTimeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisPitrRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreDatabasesRequest;
@@ -161,16 +171,24 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveRedisDisabledCommandsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveRedisDisabledCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetDisasterRecoverySettingsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetDisasterRecoverySettingsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRedisPitrPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRedisPitrPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsRequest;
@@ -189,6 +207,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowDisasterRecoverySettingsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowDisasterRecoverySettingsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogRequest;
@@ -215,6 +235,14 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisDisabledCommandsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisDisabledCommandsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisHotKeysRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisHotKeysResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrInfoRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrInfoResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusRequest;
@@ -223,8 +251,12 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRe
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
@@ -328,6 +360,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse> applyConfigurationToInstancesInvoker(
         ApplyConfigurationToInstancesRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfigurationToInstances, hcClient);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除数据库实例的手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteManualBackupRequest 请求对象
+     * @return BatchDeleteManualBackupResponse
+     */
+    public BatchDeleteManualBackupResponse batchDeleteManualBackup(BatchDeleteManualBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.batchDeleteManualBackup);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除数据库实例的手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteManualBackupRequest 请求对象
+     * @return SyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse>
+     */
+    public SyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> batchDeleteManualBackupInvoker(
+        BatchDeleteManualBackupRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.batchDeleteManualBackup, hcClient);
     }
 
     /**
@@ -477,6 +538,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<CheckWeekPasswordRequest, CheckWeekPasswordResponse> checkWeekPasswordInvoker(
         CheckWeekPasswordRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.checkWeekPassword, hcClient);
+    }
+
+    /**
+     * 关闭实例所有节点会话
+     *
+     * 关闭实例所有节点会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ClearInstanceSessionsRequest 请求对象
+     * @return ClearInstanceSessionsResponse
+     */
+    public ClearInstanceSessionsResponse clearInstanceSessions(ClearInstanceSessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.clearInstanceSessions);
+    }
+
+    /**
+     * 关闭实例所有节点会话
+     *
+     * 关闭实例所有节点会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ClearInstanceSessionsRequest 请求对象
+     * @return SyncInvoker<ClearInstanceSessionsRequest, ClearInstanceSessionsResponse>
+     */
+    public SyncInvoker<ClearInstanceSessionsRequest, ClearInstanceSessionsResponse> clearInstanceSessionsInvoker(
+        ClearInstanceSessionsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.clearInstanceSessions, hcClient);
     }
 
     /**
@@ -1056,6 +1146,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 删除Redis禁用命令
+     *
+     * 删除Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRedisDisabledCommandsRequest 请求对象
+     * @return DeleteRedisDisabledCommandsResponse
+     */
+    public DeleteRedisDisabledCommandsResponse deleteRedisDisabledCommands(DeleteRedisDisabledCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.deleteRedisDisabledCommands);
+    }
+
+    /**
+     * 删除Redis禁用命令
+     *
+     * 删除Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRedisDisabledCommandsRequest 请求对象
+     * @return SyncInvoker<DeleteRedisDisabledCommandsRequest, DeleteRedisDisabledCommandsResponse>
+     */
+    public SyncInvoker<DeleteRedisDisabledCommandsRequest, DeleteRedisDisabledCommandsResponse> deleteRedisDisabledCommandsInvoker(
+        DeleteRedisDisabledCommandsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteRedisDisabledCommands, hcClient);
+    }
+
+    /**
      * 扩容指定集群实例的节点数量
      *
      * 扩容指定集群实例的节点数量。
@@ -1517,9 +1636,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 
-     *
      * 查询实例可维护时间段
+     *
+     * 查询实例可维护时间段。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1532,9 +1651,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 
-     *
      * 查询实例可维护时间段
+     *
+     * 查询实例可维护时间段。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1544,6 +1663,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse> listInstanceMaintenanceWindowInvoker(
         ListInstanceMaintenanceWindowRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceMaintenanceWindow, hcClient);
+    }
+
+    /**
+     * 获取实例的会话
+     *
+     * 获取实例的会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSessionsRequest 请求对象
+     * @return ListInstanceSessionsResponse
+     */
+    public ListInstanceSessionsResponse listInstanceSessions(ListInstanceSessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listInstanceSessions);
+    }
+
+    /**
+     * 获取实例的会话
+     *
+     * 获取实例的会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceSessionsRequest 请求对象
+     * @return SyncInvoker<ListInstanceSessionsRequest, ListInstanceSessionsResponse>
+     */
+    public SyncInvoker<ListInstanceSessionsRequest, ListInstanceSessionsResponse> listInstanceSessionsInvoker(
+        ListInstanceSessionsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceSessions, hcClient);
     }
 
     /**
@@ -1923,6 +2071,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 查询Redis可恢复时间点
+     *
+     * 查询Redis可恢复时间点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRedisPitrRestoreTimeRequest 请求对象
+     * @return ListRedisPitrRestoreTimeResponse
+     */
+    public ListRedisPitrRestoreTimeResponse listRedisPitrRestoreTime(ListRedisPitrRestoreTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listRedisPitrRestoreTime);
+    }
+
+    /**
+     * 查询Redis可恢复时间点
+     *
+     * 查询Redis可恢复时间点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRedisPitrRestoreTimeRequest 请求对象
+     * @return SyncInvoker<ListRedisPitrRestoreTimeRequest, ListRedisPitrRestoreTimeResponse>
+     */
+    public SyncInvoker<ListRedisPitrRestoreTimeRequest, ListRedisPitrRestoreTimeResponse> listRedisPitrRestoreTimeInvoker(
+        ListRedisPitrRestoreTimeRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.listRedisPitrRestoreTime, hcClient);
+    }
+
+    /**
      * 查询GeminiDB(for Redis)数据库慢日志
      *
      * 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
@@ -2125,7 +2302,7 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 查询实例可维护时间段
+     * 设置实例可维护时间段
      *
      * 设置指定实例可维护时间段。
      * 
@@ -2140,7 +2317,7 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 查询实例可维护时间段
+     * 设置实例可维护时间段
      *
      * 设置指定实例可维护时间段。
      * 
@@ -2533,6 +2710,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 恢复当前Redis实例到指定时间点
+     *
+     * 恢复当前Redis实例到指定时间点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRedisPitrRequest 请求对象
+     * @return RestoreRedisPitrResponse
+     */
+    public RestoreRedisPitrResponse restoreRedisPitr(RestoreRedisPitrRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.restoreRedisPitr);
+    }
+
+    /**
+     * 恢复当前Redis实例到指定时间点
+     *
+     * 恢复当前Redis实例到指定时间点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRedisPitrRequest 请求对象
+     * @return SyncInvoker<RestoreRedisPitrRequest, RestoreRedisPitrResponse>
+     */
+    public SyncInvoker<RestoreRedisPitrRequest, RestoreRedisPitrResponse> restoreRedisPitrInvoker(
+        RestoreRedisPitrRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.restoreRedisPitr, hcClient);
+    }
+
+    /**
      * 关联LTS日志流
      *
      * - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
@@ -2563,6 +2769,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigsInvoker(
         SaveLtsConfigsRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
+    }
+
+    /**
+     * 设置Redis禁用命令
+     *
+     * 设置Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveRedisDisabledCommandsRequest 请求对象
+     * @return SaveRedisDisabledCommandsResponse
+     */
+    public SaveRedisDisabledCommandsResponse saveRedisDisabledCommands(SaveRedisDisabledCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.saveRedisDisabledCommands);
+    }
+
+    /**
+     * 设置Redis禁用命令
+     *
+     * 设置Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveRedisDisabledCommandsRequest 请求对象
+     * @return SyncInvoker<SaveRedisDisabledCommandsRequest, SaveRedisDisabledCommandsResponse>
+     */
+    public SyncInvoker<SaveRedisDisabledCommandsRequest, SaveRedisDisabledCommandsResponse> saveRedisDisabledCommandsInvoker(
+        SaveRedisDisabledCommandsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.saveRedisDisabledCommands, hcClient);
     }
 
     /**
@@ -2624,6 +2859,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 设置实例容灾切换的故障节点比例
+     *
+     * 设置实例容灾切换的故障节点比例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDisasterRecoverySettingsRequest 请求对象
+     * @return SetDisasterRecoverySettingsResponse
+     */
+    public SetDisasterRecoverySettingsResponse setDisasterRecoverySettings(SetDisasterRecoverySettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.setDisasterRecoverySettings);
+    }
+
+    /**
+     * 设置实例容灾切换的故障节点比例
+     *
+     * 设置实例容灾切换的故障节点比例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDisasterRecoverySettingsRequest 请求对象
+     * @return SyncInvoker<SetDisasterRecoverySettingsRequest, SetDisasterRecoverySettingsResponse>
+     */
+    public SyncInvoker<SetDisasterRecoverySettingsRequest, SetDisasterRecoverySettingsResponse> setDisasterRecoverySettingsInvoker(
+        SetDisasterRecoverySettingsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setDisasterRecoverySettings, hcClient);
+    }
+
+    /**
      * 开启/关闭实例数据导出
      *
      * 开启/关闭实例数据导出。
@@ -2681,6 +2945,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyInvoker(
         SetRecyclePolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 设置Redis恢复到指定时间点策略
+     *
+     * 设置Redis恢复到指定时间点策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRedisPitrPolicyRequest 请求对象
+     * @return SetRedisPitrPolicyResponse
+     */
+    public SetRedisPitrPolicyResponse setRedisPitrPolicy(SetRedisPitrPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.setRedisPitrPolicy);
+    }
+
+    /**
+     * 设置Redis恢复到指定时间点策略
+     *
+     * 设置Redis恢复到指定时间点策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetRedisPitrPolicyRequest 请求对象
+     * @return SyncInvoker<SetRedisPitrPolicyRequest, SetRedisPitrPolicyResponse>
+     */
+    public SyncInvoker<SetRedisPitrPolicyRequest, SetRedisPitrPolicyResponse> setRedisPitrPolicyInvoker(
+        SetRedisPitrPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.setRedisPitrPolicy, hcClient);
     }
 
     /**
@@ -2911,6 +3204,36 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
         ShowConfigurationDetailRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showConfigurationDetail, hcClient);
+    }
+
+    /**
+     * 查询实例容灾切换的故障节点比例
+     *
+     * 查询实例容灾切换的故障节点比例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDisasterRecoverySettingsRequest 请求对象
+     * @return ShowDisasterRecoverySettingsResponse
+     */
+    public ShowDisasterRecoverySettingsResponse showDisasterRecoverySettings(
+        ShowDisasterRecoverySettingsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showDisasterRecoverySettings);
+    }
+
+    /**
+     * 查询实例容灾切换的故障节点比例
+     *
+     * 查询实例容灾切换的故障节点比例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDisasterRecoverySettingsRequest 请求对象
+     * @return SyncInvoker<ShowDisasterRecoverySettingsRequest, ShowDisasterRecoverySettingsResponse>
+     */
+    public SyncInvoker<ShowDisasterRecoverySettingsRequest, ShowDisasterRecoverySettingsResponse> showDisasterRecoverySettingsInvoker(
+        ShowDisasterRecoverySettingsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showDisasterRecoverySettings, hcClient);
     }
 
     /**
@@ -3289,6 +3612,122 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 查询Redis禁用命令
+     *
+     * 查询Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisDisabledCommandsRequest 请求对象
+     * @return ShowRedisDisabledCommandsResponse
+     */
+    public ShowRedisDisabledCommandsResponse showRedisDisabledCommands(ShowRedisDisabledCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showRedisDisabledCommands);
+    }
+
+    /**
+     * 查询Redis禁用命令
+     *
+     * 查询Redis禁用命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisDisabledCommandsRequest 请求对象
+     * @return SyncInvoker<ShowRedisDisabledCommandsRequest, ShowRedisDisabledCommandsResponse>
+     */
+    public SyncInvoker<ShowRedisDisabledCommandsRequest, ShowRedisDisabledCommandsResponse> showRedisDisabledCommandsInvoker(
+        ShowRedisDisabledCommandsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRedisDisabledCommands, hcClient);
+    }
+
+    /**
+     * 查询Redis实例的热key
+     *
+     * 支持查询Redis实例的热key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisHotKeysRequest 请求对象
+     * @return ShowRedisHotKeysResponse
+     */
+    public ShowRedisHotKeysResponse showRedisHotKeys(ShowRedisHotKeysRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showRedisHotKeys);
+    }
+
+    /**
+     * 查询Redis实例的热key
+     *
+     * 支持查询Redis实例的热key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisHotKeysRequest 请求对象
+     * @return SyncInvoker<ShowRedisHotKeysRequest, ShowRedisHotKeysResponse>
+     */
+    public SyncInvoker<ShowRedisHotKeysRequest, ShowRedisHotKeysResponse> showRedisHotKeysInvoker(
+        ShowRedisHotKeysRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRedisHotKeys, hcClient);
+    }
+
+    /**
+     * 查询Redis实例指定时间点恢复所占用的存储空间
+     *
+     * 查询Redis实例指定时间点恢复所占用的存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisPitrInfoRequest 请求对象
+     * @return ShowRedisPitrInfoResponse
+     */
+    public ShowRedisPitrInfoResponse showRedisPitrInfo(ShowRedisPitrInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showRedisPitrInfo);
+    }
+
+    /**
+     * 查询Redis实例指定时间点恢复所占用的存储空间
+     *
+     * 查询Redis实例指定时间点恢复所占用的存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisPitrInfoRequest 请求对象
+     * @return SyncInvoker<ShowRedisPitrInfoRequest, ShowRedisPitrInfoResponse>
+     */
+    public SyncInvoker<ShowRedisPitrInfoRequest, ShowRedisPitrInfoResponse> showRedisPitrInfoInvoker(
+        ShowRedisPitrInfoRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRedisPitrInfo, hcClient);
+    }
+
+    /**
+     * 查询Redis恢复到指定时间点策略
+     *
+     * 查询Redis恢复到指定时间点策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisPitrPolicyRequest 请求对象
+     * @return ShowRedisPitrPolicyResponse
+     */
+    public ShowRedisPitrPolicyResponse showRedisPitrPolicy(ShowRedisPitrPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showRedisPitrPolicy);
+    }
+
+    /**
+     * 查询Redis恢复到指定时间点策略
+     *
+     * 查询Redis恢复到指定时间点策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRedisPitrPolicyRequest 请求对象
+     * @return SyncInvoker<ShowRedisPitrPolicyRequest, ShowRedisPitrPolicyResponse>
+     */
+    public SyncInvoker<ShowRedisPitrPolicyRequest, ShowRedisPitrPolicyResponse> showRedisPitrPolicyInvoker(
+        ShowRedisPitrPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.showRedisPitrPolicy, hcClient);
+    }
+
+    /**
      * 查询可恢复的实例列表
      *
      * 查询用户可恢复的实例列表
@@ -3406,6 +3845,34 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 停止备份
+     *
+     * 支持紧急情况下停止备份功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return StopBackupResponse
+     */
+    public StopBackupResponse stopBackup(StopBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.stopBackup);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 支持紧急情况下停止备份功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopBackupRequest 请求对象
+     * @return SyncInvoker<StopBackupRequest, StopBackupResponse>
+     */
+    public SyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupInvoker(StopBackupRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.stopBackup, hcClient);
+    }
+
+    /**
      * 设置实例负载均衡的IP访问黑白名单
      *
      * 设置实例负载均衡的IP访问黑白名单，黑名单、白名单只能选一种，每次调用此接口覆盖之前的设置。关闭后不限制连接的源IP地址。
@@ -3431,6 +3898,34 @@ public class GaussDBforNoSQLClient {
      */
     public SyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupInvoker(SwitchIpGroupRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchIpGroup, hcClient);
+    }
+
+    /**
+     * Redis主备切换
+     *
+     * 切换实例下的主备节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchOverRequest 请求对象
+     * @return SwitchOverResponse
+     */
+    public SwitchOverResponse switchOver(SwitchOverRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.switchOver);
+    }
+
+    /**
+     * Redis主备切换
+     *
+     * 切换实例下的主备节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchOverRequest 请求对象
+     * @return SyncInvoker<SwitchOverRequest, SwitchOverResponse>
+     */
+    public SyncInvoker<SwitchOverRequest, SwitchOverResponse> switchOverInvoker(SwitchOverRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.switchOver, hcClient);
     }
 
     /**
