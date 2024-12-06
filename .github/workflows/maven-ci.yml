@@ -21,9 +21,7 @@ jobs:
         run: |
           read -r -a array <<< "$EXCLUDED_TEST_SERVICES"
           for service in "${array[@]}"; do
-            for test in $(find "services/${service}" -type d -name "test"); do
-              echo "test: $test"
-            done
+            find "services/${service}" -type d -name "test" -exec rm -rf {} \;
           done
         env:
           EXCLUDED_TEST_SERVICES: ${{ vars.EXCLUDED_TEST_SERVICES }}
