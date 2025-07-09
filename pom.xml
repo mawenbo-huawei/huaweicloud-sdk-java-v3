@@ -54,7 +54,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snakeyaml.version>2.0</snakeyaml.version>
-        <jackson.version>2.14.2</jackson.version>
+        <jackson.version>2.15.4</jackson.version>
         <okhttp.version>4.12.0</okhttp.version>
         <bgmprovider.version>1.1.2</bgmprovider.version>
         <junit.version>4.13.1</junit.version>
